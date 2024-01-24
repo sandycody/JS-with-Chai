@@ -1,7 +1,7 @@
 let score = "3abc";
 
-console.log(typeof score);
-console.log(typeof(score));
+console.log(typeof score); //string
+console.log(typeof(score)); //string
 
 // But if we want to do operation on number
 
@@ -14,8 +14,8 @@ console.log();
 
 score = null;
 
-console.log(typeof score);
-console.log(typeof(score));
+console.log(typeof score); //object
+console.log(typeof(score)); //object
 
 // But if we want to do operation on number
 
@@ -28,8 +28,8 @@ console.log();
 
 score = undefined;
 
-console.log(typeof score);
-console.log(typeof(score));
+console.log(typeof score); //undefined
+console.log(typeof(score)); //undefined
 
 // But if we want to do operation on number
 
@@ -42,8 +42,8 @@ console.log();
 
 score = true;
 
-console.log(typeof score);
-console.log(typeof(score));
+console.log(typeof score); //boolean
+console.log(typeof(score)); //boolean
 
 // But if we want to do operation on number
 
@@ -68,29 +68,29 @@ Summary of above conversion
 let isLoggedIn = 1;
 
 let booleanIsLoggedIn = Boolean(isLoggedIn);
-console.log(typeof booleanIsLoggedIn);
-console.log(booleanIsLoggedIn);
+console.log(typeof booleanIsLoggedIn); //boolean
+console.log(booleanIsLoggedIn); //true
 console.log();
 
 isLoggedIn = 0;
 
 booleanIsLoggedIn = Boolean(isLoggedIn);
-console.log(typeof booleanIsLoggedIn);
-console.log(booleanIsLoggedIn);
+console.log(typeof booleanIsLoggedIn); //boolean
+console.log(booleanIsLoggedIn); //false
 console.log();
 
 isLoggedIn = "";
 
 booleanIsLoggedIn = Boolean(isLoggedIn);
-console.log(typeof booleanIsLoggedIn);
+console.log(typeof booleanIsLoggedIn); //boolean
 console.log(booleanIsLoggedIn); //false
 console.log();
 
 isLoggedIn = "any text";
 
 booleanIsLoggedIn = Boolean(isLoggedIn);
-console.log(typeof booleanIsLoggedIn);
-console.log(booleanIsLoggedIn);
+console.log(typeof booleanIsLoggedIn); //boolean
+console.log(booleanIsLoggedIn); //true
 console.log();
 
 // By investigating, we got:
@@ -105,8 +105,8 @@ console.log();
 let someNumber = 56;
 
 let stringSomeNumber = String(someNumber);
-console.log(typeof stringSomeNumber);
-console.log(stringSomeNumber);
+console.log(typeof stringSomeNumber); //string
+console.log(stringSomeNumber); //56
 console.log();
 
 // Note regarding typeof null
@@ -120,8 +120,8 @@ console.log();
 let val = 3;
 let negVal = -val;
 
-console.log(val);
-console.log(negVal);
+console.log(val); //3
+console.log(negVal); //-3
 console.log();
 
 // console.log(2+2);
