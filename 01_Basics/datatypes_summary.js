@@ -67,6 +67,7 @@ console.log(typeof outsideTemp); //object
 console.log(typeof myArray); //object
 console.log(typeof myObj); //object
 console.log(typeof myFunction); //object function
+console.log();
 
 // These non-primitive types always have return type i.e. object.
 // Note: Function is also a reference type and its return type is always a function but hum isko object function bolte hain.
@@ -75,3 +76,31 @@ console.log(typeof myFunction); //object function
 // Refer to this link for more information regarding datatypes:
 
 // https://262.ecma-international.org/5.1/#sec-11.4.3
+
+// ********************** Memory **********************
+// There are two types of Memories in JavaScript:
+// - STACK (It is used in Primitive Data types) : Jab bhi hum stack memory use karte hain toh hume variable ka copy milta hai
+
+// Example:
+let myValue = "yeh meri Value hai";
+let anotherValue = myValue;
+anotherValue = "ye purani value ki created copy mein change karega original value mein nhi ";
+
+console.log(myValue);
+console.log(anotherValue);
+console.log();
+
+// -HEAP (It is used in Non-Primitive Data types) : Jab bhi hum heap memory use karte hain toh hume original value ka reference milta hai, matlb agar hum kuch bhi updation karte ha toh woh original value mein changes honge
+
+// Example:
+let userOne = {
+    email: "user@gmail.com",
+    upi: "user@paytm"
+}
+
+let userTwo = userOne;
+userTwo.upi = "5096740967@ybl";
+
+console.log(userOne.upi);
+console.log(userTwo.upi);
+console.log();
