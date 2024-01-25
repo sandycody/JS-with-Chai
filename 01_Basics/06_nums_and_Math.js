@@ -24,7 +24,7 @@ console.log(otherValue.toPrecision(3)); //124 (It gives total values specified i
 
 const zeros = 200000000;
 console.log(zeros); // Difficult to see how many zeros are there 
-console.log(zeros.toLocaleString()); //It separates zeros by comma according to Us standards
+console.log(zeros.toLocaleString()); //It separates zeros by comma according to US standards
 console.log(zeros.toLocaleString('en-IN')); // It separates zeros according to Indian Standards.
 console.log();
 
