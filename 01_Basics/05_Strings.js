@@ -56,4 +56,13 @@ const string = "The quick brown fox jumps over the lazy dog.";
 
 const newString = string.split(" ");
 console.log(newString); // It returns array of string separated by space.
+/* Output
+[
+  'The',   'quick',
+  'brown', 'fox',
+  'jumps', 'over',
+  'the',   'lazy',
+  'dog.'
+]
+*/
 console.log();
