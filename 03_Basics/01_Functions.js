@@ -8,7 +8,7 @@ function sayMyName() {
     console.log('p');
 }
 // sayMyName; // => It is a function reference
-// sayMyName(); // => Execution of function when parenthesis is added with reference
+// sayMyName(); // => Termed as "Execution of function" when parenthesis is added with reference
 
 /* We'll be writing functions where something important is working rather than printing these console.logs */
 
