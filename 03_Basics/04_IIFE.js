@@ -1,5 +1,7 @@
 // Immediately Invoked Function Expressions (IIFE)
+
 // It is a function that is called immediately after it is defined. 
+
 /* Usage : It is used to invoke immediately after the function is defined. Another reason is jab bhi hum function likhte hai toh hum ye ensure karke usko likhna chahate hai ki global variable uss function mein koi problem na kare.
 Toh jo bhi hum function mein declare kar rhe hain woh kahin baar global scope se pollute ho jate hain.
 
