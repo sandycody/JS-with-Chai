@@ -23,6 +23,7 @@ But when we run JS in browser console, then this refers to window object which i
 */
 // console.log(typeof this); //object
 
+
 /* Now we print 'this' inside function in node environment */
 // function meriChai() {
 //     let username = "Candy";
