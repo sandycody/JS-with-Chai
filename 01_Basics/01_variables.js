@@ -3,7 +3,7 @@ let accountEmail = "peednascooldude@gmail.com";
 var accountPassword = "tye5@32";
 let accountState; // Isko humne declare karke chhod dia toh JavaScript isko undefined consider karti ha 
 
-// accountId = 56; //var cannot be updated and re-declared
+// accountId = 56; //const cannot be updated and re-declared as it is ensured by Node.js while execution
 
 accountCity = "Delhi";
 /* 
