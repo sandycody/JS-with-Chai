@@ -1,4 +1,5 @@
 // for-of loop
+// Definition : The JavaScript for of statement loops through the values of an iterable object. It lets you loop over iterable data structures such as Arrays, Strings, Maps, etc.
 
 const numberArray = [1, 2, 3, 4, 5];
 let s = "";
@@ -81,7 +82,7 @@ BRA : Brazil
 FRA : France
 */
 
-/* Using for-of loop on object */
+/* Using for-of loop on object but object is not iterable, we can convert an object in an array as array is iterable */
 
 const myObj = {
   'Game1' : 'GTA Vice-City',
@@ -90,7 +91,7 @@ const myObj = {
 }
 
 for (const [keys, values] of Object.entries(myObj)) {
-  console.log(`${keys} : ${values}`); // Object.entries(myObject) se object array mein convert bhi hota hai and keys and values dono pe iterate karta hai
+  console.log(`${keys} : ${values}`); // Object.entries(myObject) se object array mein convert hota hai and keys and values dono pe iterate karta hai
 }
 /* Output
 Game1 : GTA Vice-City
