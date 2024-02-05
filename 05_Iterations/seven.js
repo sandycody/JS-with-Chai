@@ -1,0 +1,1 @@
+// Map function in JS
