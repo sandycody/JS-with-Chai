@@ -7,3 +7,5 @@ const mapMine = arr
                 .filter( (num => num >= 50));
 
 console.log(mapMine);
+
+// Another eXample 
