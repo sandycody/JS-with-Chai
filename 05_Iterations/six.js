@@ -31,6 +31,9 @@ const myNums = [12, 34, 56, 67, 78, 89, 24, 90];
 const filterVal = myNums.filter( (num) => num > 50); //Implicit return
 // console.log(filterVal); //[ 56, 67, 78, 89, 90 ]
 
+const filterVal2 = myNums.filter( (num) => {num > 50});
+console.log(filterVal2); //[]
+
 // Explicit return
 const filterValues = myNums.filter ( (num) => {
     return num > 70;
