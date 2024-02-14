@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur Code</title>
+    <style>
+        body {
+            background-color: #212121;
+            color : #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <!-- This is a comment -->
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+        <div class="day">Friday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent');
+    // console.log(parent);
+    // console.log(parent.children);
+    // console.log(parent.children[2].innerText);
+
+
+    // We cannot apply loop on HTMLCollection but yes we can apply standard for-loop on it
+
+    /*for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerText);
+        parent.children[i].style.color = "orange";
+        parent.children[i].style.paddingTop = "20px";
+    } */
+
+    
+    // Now 'parent' has some more properties as:
+    // console.log(parent.firstElementChild);
+    // console.log(parent.firstElementChild.innerText);
+    // console.log(parent.lastElementChild);
+    // console.log(parent.lastElementChild.innerText);
+    
+    // Now we can go to child element to its parent without using querySelector which is not optimised as it has to traverse the whole DOM tree to just go to parent element 
+
+    // For that : 
+
+    const dayOne = document.querySelector('.day');
+    console.log(dayOne); // <div class="day">Monday</div>
+    // To access parent element, we use
+    console.log(dayOne.parentElement);
+    /* Output
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+        <div class="day">Friday</div>
+    </div>
+    */
+    console.log(dayOne.parentElement.innerText);
+    /* Output
+        Monday
+        Tuesday
+        Wednesday
+        Thursday
+        Friday
+    */
+
+    console.log(typeof dayOne.nextSibling); //object
+    console.log(dayOne.nextSibling); //#text (watch on console)
+
+    console.log(typeof dayOne.nextElementSibling); //object
+    console.log(dayOne.nextElementSibling); // <div class="day">Tuesday/div>
+
+    // More Interesting thing
+
+    console.log("NODES : ", parent.childNodes);
+
+</script>
+</html>
