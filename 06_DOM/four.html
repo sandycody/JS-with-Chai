@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur JS</title>
+    <style>
+        body {
+            background-color: #212121;
+            color : #fff;
+        }
+    </style>
+</head>
+<body>
+    <ul class="language">
+        <li style="margin-top: 20px;">JavaScript</li>
+    </ul>
+</body>
+<script>
+    // Design a function in which we have to add a new language
+
+    function addLanguage(langName) {
+        const li = document.createElement('li');
+        li.innerText = `${langName}`;
+        li.style.marginTop = "20px";
+        document.querySelector('.language').appendChild(li);
+    }
+    addLanguage('Java');
+    addLanguage('Python');
+    addLanguage('Ruby');
+    addLanguage('C++');
+    addLanguage('C');
+    addLanguage('C#');
+</script>
+</html>
