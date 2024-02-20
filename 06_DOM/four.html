@@ -25,13 +25,26 @@
         li.style.marginTop = "20px";
         document.querySelector('.language').appendChild(li);
     }
+
     addLanguage('Java');
     addLanguage('Python');
     addLanguage('Ruby');
     addLanguage('C++');
-    addLanguage('C');
-    addLanguage('C#');
-    addLanguage('Javascript');
-    addLanguage('Typescript');
+    
+    // Now we do this using optimised approach as innerText, innerHTML takes time in traversing DOM tree which is not optimised 
+
+    
+    function addOptiLanguage(langName) {
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').appendChild(li);
+    }
+    
+    addLanguage("English");
+    addLanguage("French");
+    addLanguage("Chinese");
+    addLanguage("Punjabi");
+    addLanguage("Germany");
+
 </script>
 </html>
