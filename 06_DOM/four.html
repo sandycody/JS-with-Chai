@@ -46,5 +46,23 @@
     addLanguage("Punjabi");
     addLanguage("Germany");
 
+    // Edit the elements
+
+    const thirdLang = document.querySelector("li:nth-child(3)");
+    // thirdLang.innerText = "Mojo"; //Not optimised
+
+    const newLi = document.createElement('li');
+    newLi.appendChild(document.createTextNode("Mojo"));
+    newLi.style.marginTop = "20px";
+    thirdLang.replaceWith(newLi);
+
+    // Another Method of editing of elements
+    const eightLang = document.querySelector("li:nth-child(8)");
+    eightLang.outerHTML = '<li>Portugese</li>';
+    
+    // Removing elements
+    const removeLastLang = document.querySelector('li:last-child');
+    removeLastLang.remove();
+
 </script>
 </html>
