@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+    <style>
+        body {
+            background-color: #414141;
+            color: aliceblue;
+        }
+        a {
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    //Note : JS mein jitne bhi events hote hain woh sequentially hi execute hote hain baaki kuch exceptions hote hain like event bubbling and event capturing which we will discuss here and it totally depends on the usecase  
+
+    // Another method of using onclick event which is better than that inline onclick
+    /* document.getElementById('owl').onclick = ( () => {
+        alert('Owl clicked');
+    }) */
+
+    // But above onclick method is also not that feasible as onclick does not provide that much information or features which developer wants
+
+    // So better to use event listeners as they provide onclick functionality along with ability of event propagation
+    
+    //attachEvent() is also old method 
+
+    // JQuery - on event listener
+
+    // What we have to Read about event object
+    /*
+    1. Types
+    2. TimeStamp
+    3. preventDefault() -> Jo bhi default behaviour hai kisi tag ka woh hum rok skte hain
+    4. target
+    5. toElement
+    6. srcElement
+    7. currentTarget
+    8. Position related -> clientX, clientY, screenX, screenY 
+    9. altKey, ctrlKey, shiftKey, keyCode
+    */
+
+
+    // Next Topic
+    /* Event Propagation */
+
+    /* Event propagation determines in which order the elements receive the event. There are two ways to handle this event propagation order of HTML DOM:
+
+    1. Event Bubbling (Default method i.e false)
+    2. Event Capturing (If EventListener is true)
+    */
+
+    /*document.getElementById('images').addEventListener('click', function(e) { //here 'e' is the event object
+        console.log("Clicked inside the ul tag");
+    }, false); */
+
+    /*document.getElementById('owl').addEventListener('click', function() {
+        console.log("Owl clicked")
+        e.stopPropagation(); //This is used when we have to stop the propagation to go from child to parent
+    }, false); */ 
+
+    // Output : Due to event bubbling 'Owl clicked' must be printed first on console after that 'Clicked inside the ul tag' is printed on console.
+
+    // Example of Event Capturing
+
+    /*document.getElementById('images').addEventListener('click', function(e) {
+        console.log('Clicked inside ul tag');
+        // e.stopPropagation();
+    }, true); */
+
+    /*document.getElementById('owl').addEventListener('click', function(e) {
+        console.log('Owl Clicked');
+        console.log(e);
+    }, true); */
+
+    // preventDefault() method
+
+    /*document.getElementById('google').addEventListener('click', (e) => {
+        console.log('Google clicked');
+        e.preventDefault();
+    })*/
+
+
+    /* Task is to remove the image when we click on that particular image */
+
+    // document.getElementById('photoshop').addEventListener('click', (e) => {
+    //     e.target.parentNode.style.display = "none";
+    // })
+    // document.getElementById('japan').addEventListener('click', (e) => {
+    //     e.target.parentNode.style.display = "none";
+    // })
+    // document.getElementById('river').addEventListener('click', (e) => {
+    //     document.getElementById('river').style.display = "none";
+    // })
+    // document.getElementById('owl').addEventListener('click', (e) => {
+    //     document.getElementById('owl').style.display = "none";
+    // })
+    // document.getElementById('prayer').addEventListener('click', (e) => {
+    //     document.getElementById('prayer').style.display = "none";
+    // })
+    
+    // Instead of removing the image as done above we can do it by manipulating the <ul> tag instead of all <li> tags as shown below:
+
+    document.querySelector("#images").addEventListener('click', (e) => {
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removeImage = e.target.parentNode;
+            removeImage.remove();
+            
+            /* OR */
+
+            // removeImage.parentNode.removeChild(removeImage);
+        }
+    })
+</script>
+</html>
