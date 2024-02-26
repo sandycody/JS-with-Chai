@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in JS</title>
+</head>
+<body>
+    <button class="btn1">Button 1</button>
+    <button class="btn2">Button 2</button>
+    <button class="btn3">Button 3</button>
+</body>
+<script>
+    document.querySelector('.btn1').onclick = (() => {
+        alert('Button 1 is clicked');
+    });
+
+    document.querySelector('.btn2').onclick = (() => {
+        alert('Button 2 is clicked');
+    });
+
+    document.querySelector('.btn3').onclick = (() => {
+        alert('Button 3 is clicked');
+    });
+</script>
+</html>
