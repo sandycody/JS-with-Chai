@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai Aur Code with Hitesh Sir</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+<script>
+    // We have to create a div element
+
+    // const div = document.createElement('div');
+    // console.log(div);
+
+    // // Now we have to add properties in div 
+    // div.className = 'main'; //className is a default attribute
+    // div.id = 'myId'; //id is a default attribute
+
+    // // For setting custom attributes
+    // div.setAttribute("title", "generated attribute");
+    // div.style.marginTop = "20px";
+    // div.style.color = "orange";
+    // div.style.backgroundColor = "green";
+    // // div.innerText = "My name is Chai aur Sandy";
+    // // OR Another method of adding innerText in div
+
+    // const addText = document.createTextNode("Mera naam Sandy hai");
+    // div.appendChild(addText);
+
+    // document.body.appendChild(div); //To show on browser
+
+    // function to create a new div element
+    function createNewDivElement(color, bgColor, text, title) {
+        const div = document.createElement('div');
+        div.className = 'main';
+        div.id = 'myId';
+        div.setAttribute('title', `${title}`); 
+        div.style.color = `${color}`;
+        div.style.backgroundColor = `${bgColor}`;
+
+        const addText = document.createTextNode(`${text}`);
+        div.appendChild(addText);
+        document.body.appendChild(div); //Attaching a TextNode on browser
+    }
+
+    createNewDivElement("blue", "green", "DevilSandy", "Movie");
+
+</script>
+</html>
