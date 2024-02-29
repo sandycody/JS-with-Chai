@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async with 2 basic Projects</title>
+    <style>
+        body {
+            background-color: #414141;
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    
+    let stopMe;
+    const startInterval = function () {
+        console.log("Sandy");
+    }
+    document.querySelector("#start").addEventListener('click', () => {
+        stopMe = setInterval(startInterval, 1000);
+        console.log("STARTED");
+    })
+
+    document.querySelector("#stop").addEventListener('click', () => {
+        clearInterval(stopMe);
+        console.log("STOPPED");
+    })
+
+</script>
+
+</html>
