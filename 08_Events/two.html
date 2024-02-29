@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async with 2 basic Projects</title>
+    <style>
+        body {
+            background-color: #414141;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // First method to use setTimeout() in which function() is made as an argument
+    /*console.log("Getting name ....");
+    setTimeout(function() {
+        console.log("Sandeep");
+    }, 2000);*/
+
+    // Second method to use setTimeout() in which function() is passed as reference
+    /*const sayMyName = function() {
+        console.log("Sandeep");
+    }
+    console.log("Getting name ....");
+    setTimeout(sayMyName, 2000);*/
+
+
+    // To change the heading of this page on browser after 2 secs
+
+    const changeText = setTimeout(() => {
+        document.querySelector('h1').innerText = `Best JS Series`;
+    }, 2000);
+
+    const btn = document.querySelector('#stop');
+
+    btn.addEventListener('click', () => {
+        clearTimeout(changeText);
+        console.log("STOPPED");
+    });
+</script>
+</html>
