@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API request using XHR</title>
+    <style>
+        body {
+            background-color: aliceblue;
+            color: #414141;
+        }
+
+        .table-container {
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+        }
+
+        h1 {
+            color: Black;
+            text-align: left;
+            margin-top: 36px;
+        }
+
+        .para {
+            position: relative;
+            bottom: 1px;
+        }
+
+        .container1 {
+            height: 60vh;
+            width: 60vh;
+            margin: 100px 80px;
+            padding: 10px;
+            position: relative;
+            top: 100px;
+            background-color: rgb(141, 136, 136);
+            border-radius: 15px;
+            float: left;
+        }
+
+        .container1 img {
+            border-radius: 93px;
+            height: 120px;
+            position: relative;
+            bottom:621px;
+            left: 7px;
+        }
+
+        .container1 .btn {
+            width: 210px;
+            background-color: black;
+            border: 2px solid black;
+            color: white;
+            margin: 133px 60px;
+            padding: 5px 6px;
+            position: relative;
+            bottom: 55px;
+            left: 20px;
+        }
+
+        .container1 .btn:hover {
+            background-color: rgb(143, 138, 138);
+        }
+
+        .container1 .btn {
+            width: 210px;
+            background-color: black;
+            border: 2px solid black;
+            color: white;
+            margin: 133px 30px;
+            padding: 6px 30px;
+            position: relative;
+            bottom: 110px;
+            left: 20px;
+        }
+
+        .container1 .btn img {
+            width: 20px;
+            height: 20px;
+            padding: 0px 10px;
+            margin-top: 2px;
+            position: relative;
+            top: 4px;
+        }
+
+        .container1 .btn .call1 {
+            display: inline-block;
+            margin: 5px 1px;
+            color: #00ff89;
+            font-size: 15px;
+        }
+
+        .container2 {
+            height: 60vh;
+            width: 60vh;
+            margin: 100px 80px;
+            padding: 10px;
+            position: relative;
+            top: 100px;
+            background-color: rgb(141, 136, 136);
+            border-radius: 15px;
+            float: right;
+        }
+
+        .container2 img {
+            border-radius: 93px;
+            height: 120px;
+            position: relative;
+            bottom: 572px;
+            left: 7px;
+        }
+
+        .container2 .btn {
+            width: 210px;
+            background-color: black;
+            border: 2px solid black;
+            color: white;
+            margin: 100px 53px;
+            padding: 6px 30px;
+            position: relative;
+            bottom: 110px;
+            left: 20px;
+        }
+
+        .container2 .btn:hover {
+            background-color: rgb(143, 138, 138);
+        }
+
+        .container2 .btn img {
+            width: 20px;
+            height: 20px;
+            padding: 0px 10px;
+            margin-top: 2px;
+            position: relative;
+            top: 4px;
+        }
+
+        .container2 .btn .call2 {
+            display: inline-block;
+            margin: 5px 1px;
+            color: #00ff89;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>API request using XMLHttpRequest(XHR) when fetch() was not introduced</h1>
+    <div class="table-container">
+        <table border="1">
+            <thead>
+                <tr>
+                    <td>Value</td>
+                    <td>State</td>
+                    <td>Description</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>UNSENT</td>
+                    <td>Client has been created, open() not called yet.</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>OPENED</td>
+                    <td>open() has been called.</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>HEADERS_RECEIVED</td>
+                    <td>send() has been called, and headers and status are available.</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>LOADING</td>
+                    <td>Downloading; responseText holds partial data.</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>DONE</td>
+                    <td>The operation is complete.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container1">
+        <h1>Mr. Sandeep</h1>
+        <p class="para">
+            Hi, I'm Sandeep! I'm from Delhi, India, and I am currently pursuing my MCA from BVICAM, New Delhi. I made
+            this
+            grocery store website because I want to help to the poor and needy ones and wanted to inspire others to take
+            this initiative too.
+        </p>
+        <button class="btn">
+            <img src="Images/img.png">
+            <a href="https://www.linkedin.com/in/sandeep-wadhawan-1055a1195" target="_blank">
+                <div class="call1"></div>
+            </a>
+        </button>
+    </div>
+    <div class="container2">
+        <h1>Mr. Hitesh</h1>
+        <p class="para">
+            Hi, I'm Hitesh! I'm from Bihar, India, and I am currently pursuing my MCA from BVICAM, New Delhi. I am Class
+            Representative of our section as I can handle any task very well. I made this grocery store website because
+            I
+            want to help to the poor and needy ones and wanted to inspire others to take this initiative too.
+        </p>
+        <button class="btn">
+            <img src="Images/img.png">
+            <a href="https://www.linkedin.com/in/adarsh-kumar-40a800141" target="_blank">
+                <div class="call2"> </div>
+            </a>
+        </button>
+    </div>
+</body>
+<script>
+    const requestURL = 'https://api.github.com/users/hiteshchoudhary';
+    const xhr = new XMLHttpRequest();
+    console.log("Request Unsent with code => ", xhr.readyState);
+    xhr.open('GET', requestURL)
+    xhr.onreadystatechange = function () {
+        console.log("Request continuously tracking with code => ", xhr.readyState);
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText);
+            console.log(data);
+            const img1 = document.createElement('img');
+            img1.src = "https://avatars.githubusercontent.com/u/68498988?v=4";
+            const img2 = document.createElement('img');
+            img2.src = "https://avatars.githubusercontent.com/u/11613311?v=4";
+            document.querySelector('.container1').appendChild(img1);
+            document.querySelector('.container2').appendChild(img2);
+
+            const divFollow1 = document.querySelector('.call1');
+            divFollow1.innerHTML = `Followers : ${data.followers}`;
+
+            const divFollow2 = document.querySelector('.call2');
+            divFollow2.innerHTML = `Followers : ${data.followers}`;
+        }
+    }
+    xhr.send();
+
+
+</script>
+
+</html>
