@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Snippet</title>
+</head>
+
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+
+    // New Binding Example using React class
+    class React {
+        constructor() {
+            this.library = "React";
+            this.server = "https://localhost:5000";
+
+            // Requirements : 
+            // 1. Jase hi page khule localhost wala wase hi upar created button ka reference mil jaaye 
+            // 2. ek method ho jo print kara de 'Button clicked'
+
+            document.querySelector('button').addEventListener('click', this.handleClick.bind(this));
+
+        }
+
+        handleClick() {
+            console.log("Button Clicked");
+            console.log(this);
+            console.log(this.library);
+            console.log(this.server);
+        }
+    }
+
+    const app = new React();
+
+</script>
+</html>
