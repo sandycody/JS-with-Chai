@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures in Javascript</title>
+    <style>
+        body {
+            background-color: #414141;
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+    // Lexical Scoping
+
+    function outer() {
+        let username = "Sandeep";
+        console.log(`Outer: ${secret}`); //Uncaught ReferenceError: secret is not defined at outer 
+        function innerOne() {
+            let secret = "my123";
+            console.log(`Username is ${username}`);
+        }
+
+        function innerTwo() {
+            console.log(`innerTwo is ${username}`);
+            console.log(secret); //Uncaught ReferenceError: secret is not defined at innerTwo 
+        }
+        innerOne();
+        innerTwo();
+    }
+    // outer(); 
+    /* Output:
+    Username is Sandeep
+    innerTwo is Sandeep
+    */
+
+    // console.log("TOO OUTER", username); //Uncaught ReferenceError: username is not defined
+
+
+    /* Closure */
+
+    // Code Example:
+
+    function makeFunc() {
+        const text = "Chai Meri Favourite";
+        function displayText() {
+            console.log(text);
+        }
+        return displayText;
+    }
+
+    // const myFunc = makeFunc(); //Pura ka pura lexical scope uthke jaega myFunc mein na ki sirf function ka executional context
+    // myFunc();
+
+    makeFunc()(); //Chai Meri Favourite
+
+</script>
+<script>
+    /* Practical implementation of cLosure in buttons clicking */
+    
+
+    // Task is to change the bg-Color on clicking a particular button. So here we have done for two buttons --> orange and green
+
+    /*document.querySelector('#orange').onclick = function() {
+        document.body.style.backgroundColor = "orange";
+    }
+
+    document.querySelector('#green').onclick = function() {
+        document.body.style.backgroundColor = "green";
+    } */
+
+
+    // But let's suppose there are so many buttons and we have to do same thing, then for that we create a clickHandler() function
+
+    function clickHandler(color) {
+        // We have to return a function
+        return function() {
+            document.body.style.backgroundColor = `${color}`;
+        }
+    }
+
+    document.querySelector('#orange').onclick = clickHandler("orange"); //ab yahan khali function nhi jaega onclick mein uska pura lexical scope jaega
+
+    document.querySelector('#green').onclick = clickHandler("green");
+</script>
+
+</html>
