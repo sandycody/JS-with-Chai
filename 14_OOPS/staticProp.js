@@ -34,7 +34,7 @@ class User {
 }
 
 const user = new User("Sandeep");
-// console.log(user.createId()); //Error => user,createId is not a function
+// console.log(user.createId()); //Error => user.createId is not a function
 console.log(User.createId()); //123
 
 // Another Class which extends User
